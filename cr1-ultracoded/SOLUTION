@@ -1,0 +1,5 @@
+python decode.py <  zero_one | base64 -d
+
+yields Morse code. And the Morse decodes to:
+
+ALEXCTFTH15O1SO5UP3RO5ECR3TOTXT
