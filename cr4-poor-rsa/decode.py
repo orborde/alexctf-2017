@@ -11,8 +11,6 @@ def desplit(s, d):
     return ''.join(s.split(d))
 
 MODULUS = desplit(desplit(MODULUS, '\n    '), ':')
-#MODULUS = MODULUS[::-1]
-#MODULUS='beefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef'
 print MODULUS
 
 n = int(MODULUS, base=16)
