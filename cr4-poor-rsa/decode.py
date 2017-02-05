@@ -14,10 +14,11 @@ MODULUS = desplit(desplit(MODULUS, '\n    '), ':')
 print MODULUS
 
 n = int(MODULUS, base=16)
+print n
 
 print 'Trying low divisors'
 for i in range(2, 100000):
-    if n % i == 0:
+    if (n % i) == 0:
         print i, (n / i)
 
 
@@ -47,3 +48,9 @@ for q in range(sq - 20, sq + 20 + 1):
     if (n % q) == 0:
         print q
 
+
+print 'Trying some Mersennes'
+for p in range(2, 200):
+    maysenne = 2 ** p - 1
+    if (n % maysenne) == 0:
+        print p, maysenne, n / p
