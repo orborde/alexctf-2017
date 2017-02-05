@@ -13,39 +13,39 @@ def desplit(s, d):
 MODULUS = desplit(desplit(MODULUS, '\n    '), ':')
 #MODULUS = MODULUS[::-1]
 #MODULUS='beefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef'
-print(MODULUS)
+print MODULUS
 
 n = int(MODULUS, base=16)
 
-print('Trying low divisors')
+print 'Trying low divisors'
 for i in range(2, 100000):
     if n % i == 0:
-        print(i, (n / i))
+        print i, (n / i)
 
 
-print('Trying sqrt')
+print 'Trying sqrt'
 from maths import *
 sq = isqrt(n)
 if sq*sq == n:
-    print('Square root matched:', sq)
+    print 'Square root matched:', sq
 
 sqsq = sq*sq
 if sqsq > n:
-    print('sqrt^2 > n')
+    print 'sqrt^2 > n'
 elif sqsq < n:
-    print('sqrt^2 < n')
+    print 'sqrt^2 < n'
 else:
-    print('sqrt^2 == n')
+    print 'sqrt^2 == n'
 
 ssqssq = (sq+1)*(sq+1)
 if ssqssq > n:
-    print('sqrt^2 > n')
+    print 'sqrt^2 > n'
 elif ssqssq < n:
-    print('sqrt^2 < n')
+    print 'sqrt^2 < n'
 else:
-    print('sqrt^2 == n')
+    print 'sqrt^2 == n'
 
 for q in range(sq - 20, sq + 20 + 1):
     if (n % q) == 0:
-        print(q)
+        print q
 
