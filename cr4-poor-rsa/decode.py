@@ -50,7 +50,26 @@ for q in range(sq - 20, sq + 20 + 1):
 
 
 print 'Trying some Mersennes'
-for p in range(2, 200):
+for p in range(2, 2000):
     maysenne = 2 ** p - 1
     if (n % maysenne) == 0:
         print p, maysenne, n / p
+
+print 'Maybe the modulus is just p?'
+import rsa
+e=65537
+p = n
+phi = (p - 1)
+
+flagdata = open('flag.bin', 'rb').read()
+c = 0
+for q in flagdata:
+    q = ord(q)
+    c *= 256
+    c += q
+print 'c =',hex(c)
+d = rsa.compute_d(e, phi)
+print 'd =',hex(d)
+m = rsa.decrypt(c, d, n)
+print 'm =',hex(m)
+
